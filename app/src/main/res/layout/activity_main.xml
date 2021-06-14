@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="@color/purple_200"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="EMPLOYEES INFO"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="enter name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:background="@drawable/edittext"/>
+
+    <EditText
+        android:id="@+id/etnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="enter no"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:background="@drawable/edittext"/>
+
+    <EditText
+        android:id="@+id/etdepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="enter department"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/edittext"
+        android:paddingTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnsavedata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:onClick="btnsaveddata"
+        android:text="save"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"/>
+
+
+    <Button
+        android:id="@+id/btninfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:onClick="btnshowinfo"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="info"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnupd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnupdatedata"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:text="update"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:id="@+id/btndel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:onClick="btnDeldata"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="DELETE"
+        android:textColor="@color/white" />
+</LinearLayout>

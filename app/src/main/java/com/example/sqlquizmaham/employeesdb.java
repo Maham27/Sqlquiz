@@ -17,13 +17,13 @@ public class employeesdb {
     private final String DATABASE_TABLE = "employeestable";
     private final int DATABASE_VERSION = 1;
 
-    private DBHelper ourHelper;
-    private final Context ourContext;
-    private SQLiteDatabase ourDatabase;
+    private DBHelper helper;
+    private final Context oContext;
+    private SQLiteDatabase database;
 
     public employeesdb(Context context)
     {
-        ourContext = context;
+        oContext = context;
     }
 
     private class DBHelper extends SQLiteOpenHelper
@@ -62,30 +62,30 @@ public class employeesdb {
 
     public employeesdb open()
     {
-        ourHelper = new DBHelper(ourContext);
-        ourDatabase = ourHelper.getWritableDatabase();
+        helper = new DBHelper(oContext);
+        database = helper.getWritableDatabase();
         return this;
     }
 
     public void close()
     {
-        ourHelper.close();
+        helper.close();
     }
 
-    public long createEntry(String name, String number,String department)
+    public long createentry(String name, String number,String department)
     {
         ContentValues c = new ContentValues();
         c.put(K_NAME, name);
         c.put(K_NUMBER,number);
         c.put(K_DEPARTMENT,department);
 
-        return ourDatabase.insert(DATABASE_TABLE, null,c);
+        return database.insert(DATABASE_TABLE, null,c);
     }
 
     public String getData()
     {
         String []columns = new String[]{K_ROWID, K_NAME, K_NUMBER,K_DEPARTMENT};
-        Cursor o = ourDatabase.query(DATABASE_TABLE, columns, null, null, null, null,null);
+        Cursor o = database.query(DATABASE_TABLE, columns, null, null, null, null,null);
         String r = "";
         int iRID = o.getColumnIndex(K_ROWID);
         int iRName = o.getColumnIndex(K_NAME);
@@ -105,19 +105,19 @@ public class employeesdb {
         return r;
 
     }
-    public long updateEntry(String rid, String n, String no,String d)
+    public long updated(String rid, String n, String no,String d)
     {
         ContentValues c= new ContentValues();
         c.put(K_NAME, n);
         c.put(K_NUMBER, no);
         c.put(K_DEPARTMENT,d);
 
-        return ourDatabase.update(DATABASE_TABLE, c, K_ROWID+"=?",new String[]{rid});
+        return database.update(DATABASE_TABLE, c, K_ROWID+"=?",new String[]{rid});
     }
 
-    public long deleteEntry(String rid)
+    public long deleted(String rid)
     {
-        return ourDatabase.delete(DATABASE_TABLE, K_ROWID+"=?", new String[]{rid});
+        return database.delete(DATABASE_TABLE, K_ROWID+"=?", new String[]{rid});
     }
 
 

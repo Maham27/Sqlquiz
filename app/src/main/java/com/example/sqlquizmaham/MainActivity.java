@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         employeesdb eDB = new employeesdb(this);
         eDB.open();
-        eDB.createEntry(name,number,department);
+        eDB.createentry(name,number,department);
         eDB.close();
     }
     public void btnshowinfo(View v)
@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
     {
         employeesdb eDB = new employeesdb(this);
         eDB.open();
-        long totalUpdatedRecords =  eDB.updateEntry("2", "maham", "03364406","cs");
-        Toast.makeText(this, ""+totalUpdatedRecords, Toast.LENGTH_SHORT).show();
+        long totalUpdated =  eDB.updated("2", "maham", "03336879175","cs");
+        Toast.makeText(this, ""+totalUpdated, Toast.LENGTH_SHORT).show();
         eDB.close();
     }
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     {
         employeesdb eDB = new employeesdb(this);
         eDB.open();
-        eDB.deleteEntry("1");
+        eDB.deleted("4");
         eDB.close();
     }
 
